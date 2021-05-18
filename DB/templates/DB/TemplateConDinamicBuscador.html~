@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title></title>
+    <meta name="generator" content="Bluefish 2.2.10" >
+    <meta name="date" content="2018-03-01T19:07:05+0100" >
+    <meta name="copyright" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+    <meta http-equiv="content-style-type" content="text/css">
+    <meta http-equiv="expires" content="0">
+  </head>
+  <body>
+    <!-- poner en palabra clave que se usa & de hasta 3 para poner las 4 palabras y que despues se parsea -->
+    <fieldset>
+      <form action="{%url 'DB.ConDinamicBusq'%}" method="get" enctype="text/plain"> {%csrf_token%} <input
+
+          placeholder="***Campo de busqueda***" size="50" required="required"
+
+          name="busqeda" type="search">
+        <fieldset> <legend> Seleccionar consulta:</legend>
+          <table>
+            <tbody>
+              <tr>
+                <td> <label for="filterByOrganism">Filtrar por nombre del organismo:</label> </td>
+                <td> <input id="filterByOrganism" name="raio" type="radio" value="byOrganism"> </td>
+              </tr>
+              <tr>
+                <td> <label for="filterByAutorName">Filtrar por nombre del autor:</label> </td>
+                <td> <input id="filterByAutorName" name="raio" checked="checked"
+
+                    type="radio" value="byAutorName"> </td>
+              </tr>
+              <tr>
+                <td> <label for="filterByProvince">Filtrar por provincia (no usar espacios):</label> </td>
+                <td> <input id="filterByProvince" name="raio" type="radio" value="byProvince"> </td>
+              </tr>
+              <tr>
+                <td> <label for="filterByWorkCenter">Filtrar por centro de trabajo:</label> </td>
+                <td> <input id="filterByWorkCenter" name="raio" type="radio" value="byWorkCenter"> </td>
+              </tr>
+              <tr>
+                <td> <label for="filterByCargo">Filtrar por cargo:</label> </td>
+                <td> <input id="filterByCargo" name="raio" type="radio" value="byCargo"> </td>
+              </tr>
+              <tr>
+                <td> <label for="filterByWord">Filtrar por palabra clave(no usar espacios y usar , como separador):</label> </td>
+                <td> <input id="filterByWord" name="raio" type="radio" value="byWord"> </td>
+              </tr>
+            </tbody>
+          </table>
+        </fieldset>
+        <input id="consult" style="background-color: #70ACBF" type="submit"> </form>
+    </fieldset>
+    <fieldset> <legend>Resultado:</legend> 
+	    Cantidad: {{ count }}
+			{%for element in resultado%}
+ 				<fieldset> <legend>Tesis {{ forloop.counter }}</legend>
+				<table>
+				<tbody>
+          <tr>
+	          	<th>Titulo:</th>
+	            <td>{{ element.titulo }}</td>
+				</tr>
+				<tr>
+					<th>Ubicacion:</th>
+	            <td>{{ element.ubicacion }}</td>
+            </tr>
+            <tr>
+            	<th>Palabras claves:</th>
+	            {%for palabra in element.palabras.all%}
+	            	<td>{{ palabra }}</td>
+	  				{%endfor%}
+  				</tr>
+  				<tr>
+  					<th>Nombre y apellidos del autor:</th>
+  					<th>Centro de trabajo del autor:</th>
+  					<th>Email del autor:</th>
+  					<th>Provincia del autor:</th>
+  				</tr>
+	  				{%for autor in element.autores.all%}
+	  				<tr>
+		            <td>{{ autor.nombreApellidos }}</td>
+		            <td>{{ autor.centroTrabajo }}</td>
+	           		<td>{{ autor.email }}</td>
+		     		   <td>{{ autor.provincia.nombre }}</td>
+	     		   </tr>
+	            {%endfor%}
+   	        </tbody>
+				</table>
+			</fieldset>
+          {%endfor%}
+    </fieldset>
+  </body>
+</html>

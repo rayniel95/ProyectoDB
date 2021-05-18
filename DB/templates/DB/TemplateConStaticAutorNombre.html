@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TemplateConStaticNames</title>
+</head>
+
+<body>
+	<ul>
+        {%for autor in autores%}
+        	<li>
+            	<a href="{% url 'DB.ConStaticView' autor.CI %}">{{ autor.nombreApellidos }}</a>
+            </li>
+        {%endfor%}
+    </ul>
+</body>
+</html>

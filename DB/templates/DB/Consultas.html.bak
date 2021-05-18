@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Consultas</title>
+  </head>
+  <body style="                             width: 1366px; height: 520px; margin-top: 3px; margin-left: 2px;">
+    <form name="StudentSearch" action="" method="POST"> <label for="label1">Estudiantes:
+        </label> <br> <input name="SearchStudentName" autocomplete="off" form="StudentSearch"
+        placeholder="Buscar por nombre" type="search"> <input type="checkbox"><br>
+      <input name="SearchStudentCi" autocomplete="off" placeholder="Buscar por CI"
+        type="search"> <input type="checkbox"><br>
+      <label for="SexSelector">Buscar por sexo:</label><br>
+      <select name="SexSelector">
+        <optgroup>
+          <option value="M">Masculino</option>
+          <option value="F">Femenino</option>
+        </optgroup>
+      </select>
+      <br>
+      <input name="SearchStudentEmail" placeholder="Buscar por correo" type="search">
+      <input type="checkbox"><br>
+      <input name="SearchStudentCargo" placeholder="Buscar por cargo" type="search">
+      <input type="checkbox"><br>
+      <input name="SearchStudentAge" placeholder="Buscar por edad" type="search">
+      <input type="checkbox"><br>
+      <input name="SearchStudentWork" placeholder="Buscar por centro de trabajo"
+        size="50" type="search"> <input type="checkbox"> <br>
+      <input name="SearchStudentCuadro" placeholder="Buscar por reserva de que cuadro"
+        size="50" type="search"> <input type="checkbox"><br>
+      <br>
+      <label>Curso:</label><br>
+      <input name="SearchCourseName" placeholder="Buscar por tipo" type="search">
+      <input type="checkbox"><br>
+      <input name="SearchCourseEdition" placeholder="Buscar por edicion" type="search">
+      <input type="checkbox"><br>
+      <input name="SearchCourseClasification" placeholder="Buscar por clasificacion"
+        type="search"> <input type="checkbox"><br>
+      <br>
+      <label>Buscar por tesis:</label><br>
+      <input name="SearchTesisLink" placeholder="Buscar por link" type="search">
+      <input type="checkbox"><br>
+      <input name="SearchTesisTitle" placeholder="Buscar por titulo" type="search">
+      <input type="checkbox"><br>
+      <input name="SearchTesisTheme" placeholder="Buscar por tema" type="search">
+      <input type="checkbox"><br>
+      <input name="SearchTesisUbication" placeholder="Buscar por ubicacion" type="search">
+      <input type="checkbox"><br>
+      <br>
+      <label>Buscar por palabra clave:</label><br>
+      <input name="SearchWordFirst" placeholder="Buscar por primera palabra" size="50"
+        type="search"> <input type="checkbox"><br>
+      <input name="SearchWordSecond" placeholder="Buscar por segunda palabra" size="50"
+        type="search"> <input type="checkbox"><br>
+      <input name="SearchWordThree" placeholder="Buscar por tercera palabra" size="50"
+        type="search"> <input type="checkbox"><br>
+      <input name="SearchWordFour" placeholder="Buscar por cuarta palabra" size="50"
+        type="search"> <input type="checkbox"><br>
+      <br>
+      <label>Buscar por organismo:</label> <br>
+      <input name="SearchOrganismName" placeholder="Buscar por nombre" type="search">
+      <input type="checkbox"><br>
+      <input name="SearchOrganismSigle" placeholder="Buscar por siglas" type="search">
+      <input type="checkbox"><br>
+      <br>
+      <label>Buscar por provincia:</label> <br>
+      <input name="SearchProvinceName" placeholder="Buscar por nombre" type="search">
+      <input type="checkbox"><br>
+      <br>
+      <label>Buscar por municipio:</label><br>
+      <input name="SearchMunicipeName" placeholder="Buscar por nombre" type="search">
+      <input type="checkbox"><br>
+      <br>
+      <input type="submit"> </form>
+  </body>
+</html>

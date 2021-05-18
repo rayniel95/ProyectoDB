@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title></title>
+    <meta name="generator" content="Bluefish 2.2.10">
+    <meta name="author" content="LsW">
+    <meta name="date" content="2018-02-15T22:33:17+0100">
+    <meta name="copyright" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+    <meta http-equiv="content-style-type" content="text/css">
+    <meta http-equiv="expires" content="0">
+    <style type="text/css">
+	thead th {text-align: left}
+	tbody th {text-align: left}
+</style> </head>
+  <body> {%for autor in autores%}
+    <table style="width: 1390px; height: 405px;">
+      <thead>
+        <tr>
+          <th>Autor:</th>
+          <td> <br>
+          </td>
+          <th>Organismo:</th>
+          <td> <br>
+          </td>
+          <th>Provincia:</th>
+          <td> <br>
+          </td>
+          <th>Municipio:</th>
+          <td> <br>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Nombre y Apellidos:</th>
+          <td>{{ autor.nombreApellidos}}</td>
+          <th>Nombre:</th>
+          <td>{{ autor.organismo}}</td>
+          <th>Nombre:</th>
+          <td>{{ autor.provincia}}</td>
+          <th>Nombre:</th>
+          <td>{{ autor.municipio}}</td>
+        </tr>
+        <tr>
+          <th>Centro de trabajo:</th>
+          <td>{{ autor.centroTrabajo }}</td>
+          <th><br>
+          </th>
+          <td><br>
+          </td>
+          <th><br>
+          </th>
+          <td><br>
+          </td>
+          <th><br>
+          </th>
+          <td><br>
+          </td>
+        </tr>
+        <tr>
+          <th>Cargo:</th>
+          <td>{{ autor.cargo}}</td>
+          <th><br>
+          </th>
+          <td><br>
+          </td>
+          <th><br>
+          </th>
+          <td><br>
+          </td>
+          <th><br>
+          </th>
+          <td><br>
+          </td>
+        </tr>
+        <tr>
+          <th>Reserva de que cuadro:</th>
+          <td>{{ autor.reservaDeQueCuadro }}</td>
+          <th><br>
+          </th>
+          <td><br>
+          </td>
+          <th><br>
+          </th>
+          <td><br>
+          </td>
+          <th><br>
+          </th>
+          <td><br>
+          </td>
+        </tr>
+        <tr>
+          <th>Edad:</th>
+          <td>{{ autor.edad }}</td>
+          <th><br>
+          </th>
+          <td><br>
+          </td>
+          <th><br>
+          </th>
+          <td><br>
+          </td>
+          <th><br>
+          </th>
+          <td><br>
+          </td>
+        </tr>
+        <tr>
+          <th>Sexo:</th>
+          <td>{{ autor.sexo}}</td>
+          <th><br>
+          </th>
+          <td style="height: 57.6px;"><br>
+          </td>
+          <th><br>
+          </th>
+          <td><br>
+          </td>
+          <th><br>
+          </th>
+          <td><br>
+          </td>
+        </tr>
+        <tr>
+          <th>email:</th>
+          <td>{{ autor.email}}</td>
+          <th><br>
+          </th>
+          <td><br>
+          </td>
+          <th><br>
+          </th>
+          <td><br>
+          </td>
+          <th><br>
+          </th>
+          <td><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!--aqui estaba dando problema con la variable, muy interesante, si se pone una variable con nombre tesis en la iteracion da error-->
+    <fieldset> <legend> Tesis: </legend> {%for autorTesis in autor.tesis_set.all%}
+      <table>
+        <thead>
+          <tr>
+            <th>Titulo:</th>
+            <th>Tema:</th>
+            <th>Ubicacion:</th>
+            <th>Link:</th>
+            <th>Organismo:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ autorTesis.titulo }}</td>
+            <td>{{ autorTesis.tema }}</td>
+            <td>{{ autorTesis.ubicacion }}</td>
+            <td>{{ autorTesis.link }}</td>
+            <td>{{ autorTesis.organismo }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <b>Palabras claves:</b> {%for tesisPalabra in autorTesis.palabras.all%} {{ tesisPalabra }} {%endfor%} {%endfor%} </fieldset>
+     {%endfor%}
+  </body>
+</html>
