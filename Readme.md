@@ -11,6 +11,7 @@ See in this repository:
 - Manual de usuario.docx
 - Manual Tecnico rev y arreglado.docx
 - Manual Tecnico.docx
+- Proyecto de Base de datos.pptx
 
 # Requirements
 
@@ -31,6 +32,6 @@ Credentials:
 - Username: `LsW`
 - Password: `alohomora`
 
-Now you can create other users with different access permissions. Start playing with it :-)
+Now you can create other users with different access permissions. Start playing with it 😄
 
 **Note: Its in spanish!!!!!!!!.**
